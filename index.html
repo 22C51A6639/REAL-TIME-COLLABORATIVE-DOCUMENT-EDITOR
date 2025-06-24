@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collaborative Editor</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="editor-container">
+    <header class="editor-header">
+      <h2>📝 Collaborative Editor</h2>
+      <div class="editor-controls">
+        <button class="btn" id="saveBtn">💾 Save</button>
+        <button class="btn" id="clearBtn">🗑️ Clear</button>
+      </div>
+    </header>
+    
+    <div class="editor-wrapper">
+      <textarea 
+        id="editor" 
+        rows="20" 
+        placeholder="Start typing... Your changes will be synchronized in real-time with other users."
+        spellcheck="true"
+      ></textarea>
+    </div>
+
+    <footer class="editor-footer">
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Connected</span>
+      </div>
+      <div class="user-count">
+        👥 <span id="userCount">0</span> users online
+      </div>
+    </footer>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
